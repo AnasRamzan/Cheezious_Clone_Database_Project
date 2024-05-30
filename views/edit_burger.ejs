@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Burgers</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapperHome">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header item">
+                   <a href="/" class="link">Home</a>
+                  </div>
+                  <a href="/order" class="item">
+                    Orders
+                  </a>
+                  <a href="/customer" class="item">
+                    Customer
+                  </a>
+                  <a href="/pasta" class="item">
+                    Pasta
+                  </a>
+                  <a href="/sandwitch" class="item">
+                    Sandwitches
+                  </a>
+                  <a href="/burger" class="item">
+                    Burger
+                  </a>
+                  <a href="/pizza" class="item">
+                    Pizza
+                  </a>
+                  <a href="/starter" class="item">
+                    Starters
+                  </a>
+                  <a href="/local" class="item">
+                    Local
+                  </a>
+                  <a href="/sooper" class="item">
+                    Sooper
+                  </a>
+                  <a href="/sideOrder" class="item">
+                    Side Orders
+                  </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <p class="edit_title">Edit Burger Deal</p>
+            <div class="ui container">
+                <form action="/edit_burger/<%- burger._id%>" class="ui form" method="POST">
+                    <div class="ui five fields">
+                        <div class="field">
+                            <label for="dealID" class="ui header red">Enter the Deal ID</label>
+                            <input type="text" name="dealID" placeholder="Enter Deal ID" value="<%- burger.dealID%>">
+                        </div>
+                        <div class="field">
+                            <label for="dealName" class="ui header red">Enter the Deal Name</label>
+                            <input type="text" name="dealName" placeholder="Enter Deal Name" value="<%- burger.dealName%>">
+                        </div>
+                    
+                        <div class="field">
+                            <label for="coldDrink" class="ui header red">Enter the Cold Drink</label>
+                            <input type="text" name="coldDrink" placeholder="Enter Cold Drink" value="<%- burger.coldDrink%>">
+                        </div>
+                        <div class="field">
+                            <label for="spiceLevel" class="ui header red">Enter the Spice Level</label>
+                            <input type="text" name="spiceLevel" placeholder="Enter Spice Level" value="<%- burger.spiceLevel%>">
+                        </div>
+                        <div class="field">
+                            <label for="price" class="ui header red">Enter the Price</label>
+                            <input type="text" name="price" placeholder="Enter the Price" value="<%- burger.price%>">
+                        </div>
+                    </div>
+                    <div class="ui fluid field">
+                        <input type="submit" value ="Save" class="ui button red fluid">
+                    </div>
+                </form>
+                <br><br>
+                 </div>
+    </div>
+    
+    <script src="/js/semantic.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper" >
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header item">
+                   <a href="/" class="link">Home</a>
+                  </div>
+                  <a href="/order" class="item">
+                    Orders
+                  </a>
+                  <a href="/customer" class="item">
+                    Customer
+                  </a>
+                  <a href="/pasta" class="item">
+                    Pasta
+                  </a>
+                  <a href="/sandwitch" class="item">
+                    Sandwitches
+                  </a>
+                  <a href="/burger" class="item">
+                    Burger
+                  </a>
+                  <a href="/pizza" class="item">
+                    Pizza
+                  </a>
+                  <a href="/starter" class="item">
+                    Starters
+                  </a>
+                  <a href="/local" class="item">
+                    Local
+                  </a>
+                  <a href="/sooper" class="item">
+                    Sooper
+                  </a>
+                  <a href="/sideOrder" class="item">
+                    Side Orders
+                  </a>
+                </div>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            <p class="title">Customers' Record</p>
+            <div class="ui container">
+                <form action="/add_customer" class="ui form" method="POST">
+                    <div class="ui five fields">
+                        <div class="field">
+                            <label for="name" class="ui header red">Enter the Customer name</label>
+                            <input type="text" name="name" placeholder="Enter Customer Name">
+                        </div>
+                        <div class="field">
+                            <label for="city" class="ui header red">Enter the City name</label>
+                            <input type="text" name="city" placeholder="Enter City Name">
+                        </div>
+                    
+                        <div class="field">
+                            <label for="town" class="ui header red">Enter the Town name</label>
+                            <input type="text" name="town" placeholder="Enter Town Name">
+                        </div>
+                        <div class="field">
+                            <label for="contact" class="ui header red">Enter the Contact</label>
+                            <input type="text" name="contact" placeholder="Enter Customer's Contact">
+                        </div>
+                    
+                        <div class="field">
+                            <label for="email" class="ui header red">Enter the E-mail</label>
+                            <input type="text" name="email" placeholder="Enter Customer's E-mail">
+                        </div>
+                    </div>
+                    <div class="ui fluid field">
+                        <input type="submit" value ="Submit" class="ui button red fluid">
+                    </div>
+                </form>
+                <br><br>
+                <table class="ui red table">
+                    <thead>
+                        <th>Customer name</th>
+                        <th>City</th>
+                        <th>Town</th>
+                        <th>Contact</th>
+                        <th>E-mail</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody>
+                        
+                        <% customers.forEach((customer)=>{ %>
+                            <tr>
+                                <td><%- customer.name %></td>
+                                <td><%- customer.city %></td>
+                                <td><%- customer.town %></td>
+                                <td><%- customer.contact %></td>
+                                <td><%- customer.email %></td>
+                                <td><a class="ui green button" href="/edit_customer/<%= customer._id %>"><i class="edit outline icon"></i></a></td>
+                                <td><a class="ui red button" href="/delete_customer/<%= customer._id %>"><i class="minus icon"></i></a></td>
+    
+                            </tr>
+                          <% }); %>
+                    </tbody>
+                </table>
+            </div>
+    
+    
+    <script src="/js/semantic.min.js"></script>
+</body>
+</html>

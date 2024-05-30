@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Orders</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapperHome">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header item">
+                   <a href="/" class="link">Home</a>
+                  </div>
+                  <a href="/order" class="item">
+                    Orders
+                  </a>
+                  <a href="/customer" class="item">
+                    Customer
+                  </a>
+                  <a href="/pasta" class="item">
+                    Pasta
+                  </a>
+                  <a href="/sandwitch" class="item">
+                    Sandwitches
+                  </a>
+                  <a href="/burger" class="item">
+                    Burger
+                  </a>
+                  <a href="/pizza" class="item">
+                    Pizza
+                  </a>
+                  <a href="/starter" class="item">
+                    Starters
+                  </a>
+                  <a href="/local" class="item">
+                    Local
+                  </a>
+                  <a href="/sooper" class="item">
+                    Sooper
+                  </a>
+                  <a href="/sideOrder" class="item">
+                    Side Orders
+                  </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <p class="edit_title">Edit Orders</p>
+            <div class="ui container">
+                <form action="/edit_order/<%- order._id%>" class="ui form" method="POST">
+                    <div class="ui four fields">
+                        <div class="field">
+                            <label for="name" class="ui header red">Enter the Customer name</label>
+                            <input type="text" name="Customer" placeholder="Enter Customer Name" value="<%- order.Customer%>">
+                        </div>
+                        <div class="field">
+                            <label for="players" class="ui header red">Enter the Address name</label>
+                            <input type="text" name="Address" placeholder="Enter Customer Address" value="<%- order.Address%>">
+                        </div>
+                        <div class="field">
+                            <label for="coach" class="ui header red">Enter Name of Ordered Item</label>
+                            <input type="text" name="Item_Ordered" placeholder="Enter Item Ordered" value="<%- order.Item_Ordered%>">
+                        </div>
+                        <div class="field">
+                            <label for="coach" class="ui header red">Enter Date</label>
+                            <input type="text" name="Date" placeholder="Enter Date" value="<%- order.Date%>">
+                        </div>
+                    </div>
+                    <div class="ui fluid field">
+                        <input type="submit" value ="Save" class="ui button red fluid">
+                    </div>
+                </form>
+                <br><br>
+                 </div>
+    </div>
+    
+    <script src="/js/semantic.min.js"></script>
+</body>
+</html>
